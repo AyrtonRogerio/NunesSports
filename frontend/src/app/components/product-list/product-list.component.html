@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="header">
+    <h4 class="title"></h4>
+    <button type="button" (click)="openModel()" class="add-button">Adicionar produto</button>
+  </div>
+  <div class="table-container">
+    <table class="employee-table">
+      <caption class="table-caption">Lista de produtos</caption>
+      <thead class="table-header">
+        <tr>
+          <th class="table-header-cell">Nome</th>
+          <th class="table-header-cell">Código</th>
+          <th class="table-header-cell">Descrição</th>
+          <th class="table-header-cell">Preço</th>
+          <th class="table-header-cell">Editar</th>
+          <th class="table-header-cell">Deletar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of products;" class="table-row">
+          <th scope="row" class="table-cell">{{item.name}}</th>
+          <td class="table-cell">{{item.code}}</td>
+          <td class="table-cell">{{item.description}}</td>
+          <td class="table-cell">{{item.price}}</td>
+          <td class="table-actions">
+            <button type="button" (click)="item.id && loadProduct(item)" class="edit-button">Editar</button>
+            <button type="button" (click)="item.id && deleteProduct(item.id)" class="delete-button">Deletar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-model [isOpen]="isModelOpen" (closeModel)="closeModel()">
+    <app-product-form (onCloseModel)="closeModel()" [data]="product"></app-product-form>
+  </app-model>
+</div>

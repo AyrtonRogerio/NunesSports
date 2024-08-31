@@ -1,0 +1,7 @@
+<div class="modal-overlay" [ngClass]="{'open': isOpen}">
+  <div class="modal-content">
+    <button class="close-button" (click)="onCloseModel()">×</button>
+    <ng-content></ng-content>
+  </div>
+  <div (click)="onCloseModel()"></div>
+</div>

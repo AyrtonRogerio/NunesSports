@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.29.xsd">
+
+
+    <changeSet id="1725130412451-1" author="ayrton">
+        <createTable tableName="tb_product">
+                <column name="id" type="UUID"/>
+                <column name="col_name" type="VARCHAR(255)"/>
+                <column name="col_code" type="VARCHAR(255)"/>
+                <column name="col_description" type="VARCHAR(255)"/>
+                <column name="col_price" type="DOUBLE"/>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
